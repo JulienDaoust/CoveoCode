@@ -1,3 +1,110 @@
+
+# Code pour le coding challenge de Coveo
+
+J'ai réussi le challenge et pour ce faire j'ai utilisé le langage JAVA et la plateforme Heroku pour pour le déploiement.
+Tout le code est commenté et documenté comme il se doit.
+
+Voici l'adresse de mon déploiement:
+
+- https://coveojuliendaoust.herokuapp.com/
+
+Voici une adresse pour testé la latitude et longitude comme demandé
+
+- https://coveojuliendaoust.herokuapp.com/suggestions?q=London&latitude=36.93345&longitude=-76.5494
+
+
+
+# Enonce
+ 
+# Coveo Backend Coding Challenge
+(inspired by https://github.com/busbud/coding-challenge-backend-c)
+
+## Requirements
+
+Design an API endpoint that provides auto-complete suggestions for large cities. The suggestions should be restricted to cities in the USA and Canada with a population above 5000 people.
+
+- The endpoint is exposed at `/suggestions`
+- The partial (or complete) search term is passed as a querystring parameter `q`
+- The caller's location can optionally be supplied via querystring parameters `latitude` and `longitude` to help improve relative scores
+- The endpoint returns a JSON response with an array of scored suggested matches
+    - The suggestions are sorted by descending score
+    - Each suggestion has a score between 0 and 1 (inclusive) indicating confidence in the suggestion (1 is most confident)
+    - Each suggestion has a name which can be used to disambiguate between similarly named locations
+    - Each suggestion has a latitude and longitude
+
+## "The rules"
+
+- *You can use the language and technology of your choosing.* It's OK to try something new (tell us if you do), but feel free to use something you're comfortable with. We don't care if you use something we don't; the goal here is not to validate your knowledge of a particular technology.
+- End result should be deployed on a public Cloud (Heroku, AWS etc. all have free tiers you can use).
+
+## Advices
+
+- **Try to design and implement your solution as you would do for real production code**. Show us how you create clean, maintainable code that does awesome stuff. Build something that we'd be happy to contribute to. This is not a programming contest where dirty hacks win the game.
+- Feel free to add more features! Really, we're curious about what you can think of. We'd expect the same if you worked with us.
+- Documentation and maintainability is a plus.
+- Don't you forget those unit tests.
+
+## Sample responses
+
+These responses are meant to provide guidance. The exact values can vary based on the data source and scoring algorithm
+
+**Near match**
+
+    GET /suggestions?q=Londo&latitude=43.70011&longitude=-79.4163
+
+```json
+{
+  "suggestions": [
+    {
+      "name": "London, ON, Canada",
+      "latitude": "42.98339",
+      "longitude": "-81.23304",
+      "score": 0.9
+    },
+    {
+      "name": "London, OH, USA",
+      "latitude": "39.88645",
+      "longitude": "-83.44825",
+      "score": 0.5
+    },
+    {
+      "name": "London, KY, USA",
+      "latitude": "37.12898",
+      "longitude": "-84.08326",
+      "score": 0.5
+    },
+    {
+      "name": "Londontowne, MD, USA",
+      "latitude": "38.93345",
+      "longitude": "-76.54941",
+      "score": 0.3
+    }
+  ]
+}
+```
+
+**No match**
+
+    GET /suggestions?q=SomeRandomCityInTheMiddleOfNowhere
+
+```json
+{
+  "suggestions": []
+}
+```
+
+## References
+
+- Geonames provides city lists Canada and the USA http://download.geonames.org/export/dump/readme.txt
+
+## Getting Started
+
+Begin by forking this repo and cloning your fork. GitHub has apps for [Mac](http://mac.github.com/) and
+[Windows](http://windows.github.com/) that make this easier.
+
+
+
+
 # Tables
 
 The main 'geoname' table has the following fields :
