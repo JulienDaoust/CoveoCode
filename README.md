@@ -1,7 +1,7 @@
 
 # Code pour le coding challenge de Coveo
 
-J'ai réussi le challenge et pour ce faire j'ai utilisé le langage JAVA et la plateforme Heroku pour pour le déploiement.
+J'ai réussi le challenge et pour ce faire j'ai utilisé le langage JAVA et la plateforme Heroku pour le déploiement.
 Tout le code est commenté et documenté comme il se doit.
 
 Voici l'adresse de mon déploiement:
