@@ -12,6 +12,10 @@ Voici une adresse pour testé la latitude et longitude comme demandé
 
 - https://coveojuliendaoust.herokuapp.com/suggestions?q=London&latitude=36.93345&longitude=-76.5494
 
+## Améliorations futures
+
+- Utilisé une autre librairie pour générer le JSON. Malgré toutes mes tentatives, les données ne sortent jamais dans l'ordre voulu.
+- Améliorer l'algorithme d'attribution du score pour qu'il soit plus performant. Il y aura toujours une amélioration à faire dans un algorithme de ce genre.
 
 
 # Enonce
